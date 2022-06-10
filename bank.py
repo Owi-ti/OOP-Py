@@ -30,16 +30,16 @@ class Account:
            self.balance-=transaction_charge
            self.withdrawals.append(amount)
            print(self.withdrawals)
-           return f"hello {self.name} you have withdrawn Ksh{amount} your new balance is Ksh{self.balance}"        
+           return f"Hello {self.name} you have withdrawn Ksh{amount} your new balance is Ksh.{self.balance}"        
     
     def deposits_statement(self):
         for amount in self.deposits:
-           print (f"Hello, You have  deposited Ksh {amount}" )
+           print (f"Dear Esther, You have deposited Ksh.{amount}" )
 
     def withdrawals_statement(self):
        for amount in self.withdrawals:
-           print (f"Hello, You have  withdrawn Ksh {amount}" )
+           print (f"Dear Esther, You have withdrawn Ksh.{amount}" )
     
     def  get_balance(self):
-        return f"your current balance is {self.balance}"
+        return f"Dear Esther,your current balance is Ksh.{self.balance}"
 
