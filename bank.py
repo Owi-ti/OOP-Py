@@ -57,11 +57,18 @@ class Account:
 
 
     def full_statement(self):
-        for n in self.all_statement:
+        for n in self.all_statement: 
             time= n["Date"]
             narration= n["narration"]
             amount= n["amount"] 
             print(f"{time}.........{narration}........{amount}")
+            # statement =self.deposite + self.withdrawals
+            # fro statement in statement:
+            # statement.sort(key=labda:statement:statement['date'],reverse=True)
+            # date= statement['date'].strftime(%d:%m:%y)
+            # narration=statement['narration']
+            # amount-statement['amount']
+            #  print(f"{time}.........{narration}........{amount}")
 
 
     def borrow(self,amount):
@@ -77,6 +84,9 @@ class Account:
 
         elif amount>=total:
             print(f"You are not qualified for loan higher than{self.deposits//3}")
+            # total=(sum[deposit[amoun] for deposit in self.deposit])     
+            # amount>total*1/3:
+            # return "amount must be lass than {total*1/3}"
 
         elif self.loan_balance > 0:
             print(f"Failed,You hava an outstanding balance loan of{self.loan_balance}")    
@@ -103,9 +113,11 @@ class Account:
             return f"You balance is insufficient"
         elif amount <=0:
             return f"Enter correct amount"
-        else:
+        elif isinstance(account,Account):
             self.balance-=amount
-            return f"You have successfully sent {amount} to {account} your current balance is {self.balance}"
+            account.deposit(amount)
+            return f"You have successfully sent {amount}, your current balance is {self.balance}"
+            # elif insatnce(Account,account)
 
 
 
